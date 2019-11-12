@@ -1,0 +1,11 @@
+#! /bin/bash
+
+temp=""
+
+until [ $# -le 0 ] #until当条件为真是结束，为假执行循环
+do
+temp="$1 $temp"
+shift
+done
+
+echo $temp

@@ -1,0 +1,12 @@
+#! /bin/bash
+
+dir=$1
+
+for i in $dir/* # “/*”代表遍历以$dir为名称的目录下的所有文件
+do
+if [ -f "$i" ]
+then
+permission=`ls -l "$i"|cut -c 1-10` # cut -c为按字符截取，1-10位权限位
+echo -e "$permission\t$i" #\t制表符
+fi
+done 

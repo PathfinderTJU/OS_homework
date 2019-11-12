@@ -1,0 +1,6 @@
+#! /bin/bash
+
+case $1 in
+"y" | "Y" | "yes" | "YES" | "Yes" ) exit 0;;
+* ) exit 1;;
+esac

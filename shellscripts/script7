@@ -1,0 +1,23 @@
+#! /bin/bash
+
+function print(){
+	a=$1
+	if [ -f "$a" ] #是文件，显示其名字
+	then
+		echo $a
+	elif [ -d "$a" ] #是目录，对其中所有文件或目录递归调用此函数
+	then
+		for i in $a/*
+			do
+				print $i
+			done
+	fi
+}
+
+path=$1
+if [ -n "$path" ]
+then
+	print $path
+else
+	print "." #无参数输入则默认目录为.，即当前目录
+fi

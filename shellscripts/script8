@@ -1,0 +1,11 @@
+#! /bin/bash
+
+temp=""
+
+while [ $# -gt 0 ]
+do
+temp="$1 $temp"
+shift
+done
+echo $temp
+

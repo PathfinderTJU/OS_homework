@@ -1,0 +1,12 @@
+#! /bin/bash
+
+num=$#
+temp=""
+
+for i in $* #遍历参数列表的一种方法
+do
+temp="$i $temp"
+done
+
+echo $temp
+

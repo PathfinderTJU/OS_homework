@@ -1,0 +1,24 @@
+#! /bin/bash
+
+files=$#
+b=""
+
+while [ $# -gt 0 ]
+do
+b="$b $1"
+shift
+done
+
+if [ -n "$MAXFILES" ] #判断MAXFILES是否被设置，未被设置则为空字符串，注意一定要加双引号，否则不是空字符串
+then
+
+if [ "$MAXFILES" -le "$files" ]
+then
+rm -i $b #rm -i是删除前询问
+else
+rm $b
+fi
+
+else
+rm $b
+fi

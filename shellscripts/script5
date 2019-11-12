@@ -1,0 +1,14 @@
+#! /bin/bash
+
+if [ -d "$1" ] #目录
+then
+ls $1
+elif [ -x "$1" ] #可执行
+then
+bash $1
+elif [ -r "$1" ] #可读文件
+then
+cat < $1
+else
+exit 1
+fi
